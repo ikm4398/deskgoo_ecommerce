@@ -1,0 +1,214 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-02-05 10:53:50.854916",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "site_logo_section",
+  "site_logo_lite",
+  "column_break_dtle",
+  "site_logo_dark",
+  "navbar_section",
+  "display_phone",
+  "email",
+  "column_break_fdot",
+  "promo_link",
+  "logged_in_promo_link",
+  "call_us_link",
+  "footer_section",
+  "office_address",
+  "promo_discount",
+  "facebook_link",
+  "insta_link",
+  "x_link",
+  "column_break_rjkt",
+  "tiktok_link",
+  "youtube_link",
+  "whatsapp_link",
+  "section_break_tprq",
+  "esewa_logo",
+  "fonepay_logo",
+  "nepalpay_logo",
+  "mastercard_logo",
+  "visa_logo",
+  "khalti_ime_logo",
+  "smart_qr_logo",
+  "rights"
+ ],
+ "fields": [
+  {
+   "fieldname": "display_phone",
+   "fieldtype": "Data",
+   "label": "Display Phone"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email"
+  },
+  {
+   "fieldname": "promo_link",
+   "fieldtype": "Data",
+   "label": "Promo LInk"
+  },
+  {
+   "fieldname": "call_us_link",
+   "fieldtype": "Data",
+   "label": "Call US Link"
+  },
+  {
+   "fieldname": "site_logo_lite",
+   "fieldtype": "Attach Image",
+   "label": "Site Logo Lite"
+  },
+  {
+   "fieldname": "site_logo_dark",
+   "fieldtype": "Attach Image",
+   "label": "Site Logo Dark"
+  },
+  {
+   "fieldname": "navbar_section",
+   "fieldtype": "Section Break",
+   "label": "Navbar"
+  },
+  {
+   "fieldname": "column_break_fdot",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "footer_section",
+   "fieldtype": "Section Break",
+   "label": "Footer"
+  },
+  {
+   "fieldname": "site_logo_section",
+   "fieldtype": "Section Break",
+   "label": "Site Logo"
+  },
+  {
+   "fieldname": "column_break_dtle",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "office_address",
+   "fieldtype": "Data",
+   "label": "Office Address"
+  },
+  {
+   "fieldname": "youtube_link",
+   "fieldtype": "Data",
+   "label": "YouTube Link "
+  },
+  {
+   "fieldname": "x_link",
+   "fieldtype": "Data",
+   "label": "X Link"
+  },
+  {
+   "fieldname": "facebook_link",
+   "fieldtype": "Data",
+   "label": "Facebook Link"
+  },
+  {
+   "fieldname": "insta_link",
+   "fieldtype": "Data",
+   "label": "Insta Link"
+  },
+  {
+   "fieldname": "tiktok_link",
+   "fieldtype": "Data",
+   "label": "TikTok Link "
+  },
+  {
+   "fieldname": "whatsapp_link",
+   "fieldtype": "Data",
+   "label": "WhatsApp Link "
+  },
+  {
+   "fieldname": "column_break_rjkt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "promo_discount",
+   "fieldtype": "Data",
+   "label": "Promo Discount %"
+  },
+  {
+   "fieldname": "section_break_tprq",
+   "fieldtype": "Section Break",
+   "label": "Bottom bar"
+  },
+  {
+   "fieldname": "esewa_logo",
+   "fieldtype": "Attach Image",
+   "label": "eSewa Logo"
+  },
+  {
+   "fieldname": "fonepay_logo",
+   "fieldtype": "Attach Image",
+   "label": "FonePay Logo"
+  },
+  {
+   "fieldname": "nepalpay_logo",
+   "fieldtype": "Attach Image",
+   "label": "NepalPay Logo"
+  },
+  {
+   "fieldname": "mastercard_logo",
+   "fieldtype": "Attach Image",
+   "label": "MasterCard Logo"
+  },
+  {
+   "fieldname": "visa_logo",
+   "fieldtype": "Attach Image",
+   "label": "Visa Logo"
+  },
+  {
+   "fieldname": "khalti_ime_logo",
+   "fieldtype": "Attach Image",
+   "label": "Khalti IME Logo"
+  },
+  {
+   "fieldname": "smart_qr_logo",
+   "fieldtype": "Attach Image",
+   "label": "Smart Qr Logo"
+  },
+  {
+   "fieldname": "logged_in_promo_link",
+   "fieldtype": "Data",
+   "label": "Logged In Promo Link"
+  },
+  {
+   "fieldname": "rights",
+   "fieldtype": "Data",
+   "label": "Rights"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2026-02-19 13:17:21.800004",
+ "modified_by": "rashuv@kunyo.com",
+ "module": "Deskgoo Ecommerce",
+ "name": "Navbar And Footer",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}
