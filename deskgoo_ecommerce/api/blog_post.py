@@ -1,6 +1,6 @@
 import frappe
 
-@frappe.whitelist(allow_guest=True)
+@frappe.whitelist(allow_guest=False)
 def get_blog_posts_with_categories():
     posts = frappe.get_all(
         "Blog Post",
