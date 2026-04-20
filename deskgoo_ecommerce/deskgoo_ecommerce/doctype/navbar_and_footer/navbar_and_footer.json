@@ -9,6 +9,10 @@
   "site_logo_lite",
   "column_break_dtle",
   "site_logo_dark",
+  "site_fav_icon_section",
+  "site_fav_icon_lite",
+  "column_break_rtri",
+  "site_fav_icon_dark",
   "navbar_section",
   "display_phone",
   "email",
@@ -183,29 +187,37 @@
    "fieldname": "rights",
    "fieldtype": "Data",
    "label": "Rights"
+  },
+  {
+   "fieldname": "site_fav_icon_section",
+   "fieldtype": "Section Break",
+   "label": "Site Fav Icon"
+  },
+  {
+   "fieldname": "site_fav_icon_lite",
+   "fieldtype": "Attach Image",
+   "label": "Site Fav Icon Lite"
+  },
+  {
+   "fieldname": "column_break_rtri",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "site_fav_icon_dark",
+   "fieldtype": "Attach Image",
+   "label": "Site Fav Icon Dark"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2026-02-19 13:17:21.800004",
- "modified_by": "rashuv@kunyo.com",
+ "modified": "2026-04-15 14:00:30.816155",
+ "modified_by": "Administrator",
  "module": "Deskgoo Ecommerce",
  "name": "Navbar And Footer",
  "owner": "Administrator",
- "permissions": [
-  {
-   "create": 1,
-   "delete": 1,
-   "email": 1,
-   "print": 1,
-   "read": 1,
-   "role": "System Manager",
-   "share": 1,
-   "write": 1
-  }
- ],
+ "permissions": [],
  "row_format": "Dynamic",
  "rows_threshold_for_grid_search": 20,
  "sort_field": "creation",
