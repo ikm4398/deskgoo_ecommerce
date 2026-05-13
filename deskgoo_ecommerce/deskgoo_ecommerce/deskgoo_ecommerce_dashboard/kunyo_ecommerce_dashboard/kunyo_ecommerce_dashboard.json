@@ -1,0 +1,45 @@
+{
+ "cards": [
+  {
+   "card": "Total Customers"
+  },
+  {
+   "card": "Total Suppliers"
+  },
+  {
+   "card": "Total Items"
+  },
+  {
+   "card": "Total Sales Invoices"
+  },
+  {
+   "card": "Total Purchase Orders"
+  }
+ ],
+ "charts": [
+  {
+   "chart": "Monthly Sales Overview",
+   "width": "Full"
+  },
+  {
+   "chart": "Inventory Status",
+   "width": "Half"
+  },
+  {
+   "chart": "Purchase Activity",
+   "width": "Half"
+  }
+ ],
+ "creation": "2026-05-07 13:08:53.473195",
+ "dashboard_name": "Kunyo Ecommerce Dashboard",
+ "docstatus": 0,
+ "doctype": "Dashboard",
+ "idx": 0,
+ "is_default": 0,
+ "is_standard": 1,
+ "modified": "2026-05-13 16:03:12.964736",
+ "modified_by": "Administrator",
+ "module": "Deskgoo Ecommerce",
+ "name": "Kunyo Ecommerce Dashboard",
+ "owner": "Administrator"
+}
