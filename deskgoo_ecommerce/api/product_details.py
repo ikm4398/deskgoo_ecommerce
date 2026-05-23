@@ -8,20 +8,20 @@ def get_items_with_price_and_stock(
     warehouse=None,
     item=None,
     item_group=None,
-    search=None,
-    limit=100
+    search=None
 ):
-
+    """
+    Fetch items with price, stock, specifications, attachments, and additional fields.
+    No hardcoded limit - returns all matching items.
+    """
     filters = {
         "disabled": 0,
         "is_sales_item": 1
     }
 
-    # Filter by exact item code/name
     if item:
         filters["item_code"] = item
 
-    # Filter by item group/category
     if item_group:
         filters["item_group"] = item_group
 
@@ -33,103 +33,66 @@ def get_items_with_price_and_stock(
         "image",
         "item_group",
         "custom_product_rating",
-        "custom_saved_specifications"
+        "custom_saved_specifications",
+        "brand",
+        "warranty_period",
+        "description",
+        "custom_discount"
     ]
 
-    items = frappe.get_all(
-        "Item",
-        filters=filters,
-        fields=fields,
-        limit=limit
-    )
+    # No limit - fetch all items matching filters
+    items = frappe.get_all("Item", filters=filters, fields=fields)
 
     result = []
 
     for item_doc in items:
-
-        # Search filter
+        # Search filter (post-query, but no limit so acceptable)
         if search:
             search_text = search.lower()
-
-            if (
-                search_text not in (item_doc.item_name or "").lower()
-                and search_text not in (item_doc.item_code or "").lower()
-            ):
+            if (search_text not in (item_doc.item_name or "").lower()
+                    and search_text not in (item_doc.item_code or "").lower()):
                 continue
 
-        # =========================
-        # PRICE
-        # =========================
+        # Price
         price = frappe.db.get_value(
             "Item Price",
-            {
-                "item_code": item_doc.item_code,
-                "price_list": price_list
-            },
+            {"item_code": item_doc.item_code, "price_list": price_list},
             "price_list_rate"
         ) or 0
 
-        # =========================
-        # STOCK
-        # =========================
+        # Stock
         if warehouse:
             stock = frappe.db.get_value(
                 "Bin",
-                {
-                    "item_code": item_doc.item_code,
-                    "warehouse": warehouse
-                },
+                {"item_code": item_doc.item_code, "warehouse": warehouse},
                 "actual_qty"
             ) or 0
         else:
             stock = get_latest_stock_qty(item_doc.item_code) or 0
 
-        # =========================
-        # CLEAN SPECIFICATIONS
-        # =========================
+        # Clean specifications from HTML
         specifications = {}
-
         if item_doc.custom_saved_specifications:
-
-            soup = BeautifulSoup(
-                item_doc.custom_saved_specifications,
-                "html.parser"
-            )
-
-            paragraphs = soup.find_all("p")
-
-            for p in paragraphs:
+            soup = BeautifulSoup(item_doc.custom_saved_specifications, "html.parser")
+            for p in soup.find_all("p"):
                 strong = p.find("strong")
-
                 if strong:
                     key = strong.get_text(strip=True).replace(":", "")
-
                     strong.extract()
-
                     value = p.get_text(" ", strip=True)
-
                     specifications[key] = value
 
-        # =========================
-        # ATTACHMENTS
-        # =========================
+        # Attachments
         attachments = frappe.get_all(
             "File",
             filters={
                 "attached_to_doctype": "Item",
                 "attached_to_name": item_doc.name
             },
-            fields=[
-                "name",
-                "file_name",
-                "file_url",
-                "is_private"
-            ]
+            fields=["name", "file_name", "file_url", "is_private"]
         )
 
-        # =========================
-        # FINAL RESPONSE
-        # =========================
+        # Final response with all requested fields
         result.append({
             "item_code": item_doc.item_code,
             "item_name": item_doc.item_name or item_doc.item_code,
@@ -138,12 +101,12 @@ def get_items_with_price_and_stock(
             "price": float(price),
             "instock_quantity": float(stock),
             "rating": item_doc.custom_product_rating or 0,
-
-            # Clean JSON specification
-            "specifications": specifications,
-
-            # All attachments
-            "attachments": attachments
+            "brand": item_doc.brand,
+            "warranty_period": item_doc.warranty_period,
+            "description": item_doc.description,
+            "custom_discount": item_doc.custom_discount,
+	    "specifications": specifications,
+	    "attachments": attachments,
         })
 
     return result
