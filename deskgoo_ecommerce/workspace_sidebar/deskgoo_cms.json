@@ -136,11 +136,23 @@
   {
    "child": 1,
    "collapsible": 1,
-   "icon": "notebook-text",
+   "icon": "book-open-text",
    "indent": 0,
    "keep_closed": 0,
    "label": "Blog Post",
    "link_to": "Blog Post",
+   "link_type": "DocType",
+   "show_arrow": 0,
+   "type": "Link"
+  },
+  {
+   "child": 1,
+   "collapsible": 1,
+   "icon": "comment",
+   "indent": 0,
+   "keep_closed": 0,
+   "label": "Blog Comment",
+   "link_to": "Blog Comment",
    "link_type": "DocType",
    "show_arrow": 0,
    "type": "Link"
@@ -164,7 +176,7 @@
    "indent": 0,
    "keep_closed": 0,
    "label": "About Us",
-   "link_to": "About Us Settings",
+   "link_to": "About Us Page",
    "link_type": "DocType",
    "show_arrow": 0,
    "type": "Link"
@@ -176,7 +188,7 @@
    "indent": 0,
    "keep_closed": 0,
    "label": "Contact Us",
-   "link_to": "Contact Us Settings",
+   "link_to": "Website Contact Page Settings",
    "link_type": "DocType",
    "show_arrow": 0,
    "type": "Link"
@@ -204,9 +216,33 @@
    "link_type": "DocType",
    "show_arrow": 0,
    "type": "Link"
+  },
+  {
+   "child": 0,
+   "collapsible": 1,
+   "icon": "file-question-mark",
+   "indent": 0,
+   "keep_closed": 0,
+   "label": "FAQ",
+   "link_to": "FAQ",
+   "link_type": "DocType",
+   "show_arrow": 0,
+   "type": "Link"
+  },
+  {
+   "child": 0,
+   "collapsible": 1,
+   "icon": "target",
+   "indent": 0,
+   "keep_closed": 0,
+   "label": "Offer",
+   "link_to": "Offer",
+   "link_type": "DocType",
+   "show_arrow": 0,
+   "type": "Link"
   }
  ],
- "modified": "2026-05-10 13:58:24.323733",
+ "modified": "2026-06-10 16:50:01.065377",
  "modified_by": "Administrator",
  "module": "Deskgoo Ecommerce",
  "name": "Deskgoo CMS",

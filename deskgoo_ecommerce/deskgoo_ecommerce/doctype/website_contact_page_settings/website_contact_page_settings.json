@@ -1,0 +1,178 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-05-28 13:43:13.831582",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "location_map_section",
+  "enable_map",
+  "map_location_title",
+  "map_address",
+  "google_map_embed_url",
+  "map_height",
+  "contact_form_settings_section",
+  "form_heading",
+  "form_description",
+  "store_contact_information_section",
+  "store_heading",
+  "store_address",
+  "phone",
+  "email",
+  "business_hours_section",
+  "show_business_hours",
+  "store_hours",
+  "careers___opportunities_section",
+  "show_careers_section",
+  "careers_heading",
+  "careers_description",
+  "careers_link_label",
+  "careers_link_url"
+ ],
+ "fields": [
+  {
+   "fieldname": "location_map_section",
+   "fieldtype": "Section Break",
+   "label": "Location_Map"
+  },
+  {
+   "default": "0",
+   "fieldname": "enable_map",
+   "fieldtype": "Check",
+   "label": "Enable Map"
+  },
+  {
+   "fieldname": "map_location_title",
+   "fieldtype": "Data",
+   "label": "Map Location Title"
+  },
+  {
+   "fieldname": "map_address",
+   "fieldtype": "Small Text",
+   "label": "Map Address"
+  },
+  {
+   "fieldname": "google_map_embed_url",
+   "fieldtype": "Code",
+   "label": "Google Map Embed URL"
+  },
+  {
+   "fieldname": "map_height",
+   "fieldtype": "Int",
+   "label": "Map Height"
+  },
+  {
+   "fieldname": "contact_form_settings_section",
+   "fieldtype": "Section Break",
+   "label": "Contact Form Settings"
+  },
+  {
+   "fieldname": "form_heading",
+   "fieldtype": "Data",
+   "label": "Form Heading"
+  },
+  {
+   "fieldname": "form_description",
+   "fieldtype": "Text Editor",
+   "label": "Form Description"
+  },
+  {
+   "fieldname": "store_contact_information_section",
+   "fieldtype": "Section Break",
+   "label": "Store_Contact Information"
+  },
+  {
+   "fieldname": "store_heading",
+   "fieldtype": "Data",
+   "label": "Store Heading"
+  },
+  {
+   "fieldname": "store_address",
+   "fieldtype": "Small Text",
+   "label": "Store Address"
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "label": "Phone"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email"
+  },
+  {
+   "fieldname": "business_hours_section",
+   "fieldtype": "Section Break",
+   "label": "Business Hours"
+  },
+  {
+   "default": "0",
+   "fieldname": "show_business_hours",
+   "fieldtype": "Check",
+   "label": "Show Business Hours"
+  },
+  {
+   "fieldname": "store_hours",
+   "fieldtype": "Text Editor",
+   "label": "Store Hours"
+  },
+  {
+   "fieldname": "careers___opportunities_section",
+   "fieldtype": "Section Break",
+   "label": "Careers _ Opportunities"
+  },
+  {
+   "default": "0",
+   "fieldname": "show_careers_section",
+   "fieldtype": "Check",
+   "label": "Show Careers Section"
+  },
+  {
+   "fieldname": "careers_heading",
+   "fieldtype": "Data",
+   "label": "Careers Heading"
+  },
+  {
+   "fieldname": "careers_description",
+   "fieldtype": "Text Editor",
+   "label": "Careers Description"
+  },
+  {
+   "fieldname": "careers_link_label",
+   "fieldtype": "Data",
+   "label": "Careers Link Label"
+  },
+  {
+   "fieldname": "careers_link_url",
+   "fieldtype": "Data",
+   "label": "Careers Link URL"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2026-05-28 17:11:01.681846",
+ "modified_by": "Administrator",
+ "module": "Deskgoo Ecommerce",
+ "name": "Website Contact Page Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

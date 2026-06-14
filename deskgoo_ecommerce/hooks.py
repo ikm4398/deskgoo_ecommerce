@@ -15,3 +15,9 @@ try:
     override_module.override_hook_titles()
 except ModuleNotFoundError:
     pass
+
+# Export all Client Scripts and Server Scripts
+fixtures = [
+    {"dt": "Client Script"},
+    {"dt": "Server Script"},
+]

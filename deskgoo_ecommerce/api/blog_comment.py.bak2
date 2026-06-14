@@ -30,14 +30,6 @@ def create():
 
     frappe.db.commit()
 
-    # Fetch user details
-    user = frappe.db.get_value(
-        "User",
-        new_comment.owner,
-        ["full_name", "username"],
-        as_dict=True
-    )
-
     return {
         "status": "success",
         "message": "Comment added",
@@ -45,8 +37,6 @@ def create():
             "name": new_comment.name,
             "comment": new_comment.content,
             "by": new_comment.owner,
-            "full_name": user.full_name if user else None,
-            "username": user.username if user else None,
             "creation": new_comment.creation,
             "pretty_date": pretty_date(new_comment.creation)
         }
@@ -72,18 +62,8 @@ def get_comments(blog_name):
         order_by="creation asc"
     )
 
-    # Add user details + human readable date
+    # Add human readable date
     for comment in comments:
-
-        user = frappe.db.get_value(
-            "User",
-            comment["owner"],
-            ["full_name", "username"],
-            as_dict=True
-        )
-
-        comment["full_name"] = user.full_name if user else None
-        comment["username"] = user.username if user else None
         comment["pretty_date"] = pretty_date(comment["creation"])
 
     return {

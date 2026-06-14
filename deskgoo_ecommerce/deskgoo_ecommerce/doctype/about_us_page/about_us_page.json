@@ -1,0 +1,195 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-06-07 11:14:08.875128",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "hero_section_section",
+  "hero_title",
+  "hero_short_description",
+  "hero_background_image",
+  "hero_card_image__logo",
+  "show_hero_section",
+  "intro_section_section",
+  "intro_section",
+  "intro_image",
+  "intro_heading",
+  "intro_paragraph_1",
+  "intro_paragraph_2",
+  "experience_section_section",
+  "experience_heading",
+  "experience_description_1",
+  "experience_description_2",
+  "experience_image_top",
+  "experience_image_bottom",
+  "vision_section_section",
+  "vision_heading",
+  "vision_description",
+  "show_vision_section",
+  "seo_section_section",
+  "meta_title",
+  "meta_description",
+  "meta_image"
+ ],
+ "fields": [
+  {
+   "fieldname": "hero_section_section",
+   "fieldtype": "Section Break",
+   "label": "Hero Section"
+  },
+  {
+   "fieldname": "hero_title",
+   "fieldtype": "Data",
+   "label": "Hero Title"
+  },
+  {
+   "fieldname": "hero_short_description",
+   "fieldtype": "Text Editor",
+   "label": "Hero Short Description"
+  },
+  {
+   "fieldname": "hero_background_image",
+   "fieldtype": "Attach Image",
+   "label": "Hero Background Image"
+  },
+  {
+   "fieldname": "hero_card_image__logo",
+   "fieldtype": "Attach Image",
+   "label": "Hero Card Image / Logo"
+  },
+  {
+   "default": "0",
+   "fieldname": "show_hero_section",
+   "fieldtype": "Check",
+   "label": "Show Hero Section"
+  },
+  {
+   "fieldname": "intro_section_section",
+   "fieldtype": "Section Break",
+   "label": "Intro Section"
+  },
+  {
+   "fieldname": "intro_section",
+   "fieldtype": "Attach Image",
+   "label": "Intro Section"
+  },
+  {
+   "fieldname": "intro_image",
+   "fieldtype": "Attach Image",
+   "label": "Intro Image"
+  },
+  {
+   "fieldname": "intro_heading",
+   "fieldtype": "Data",
+   "label": "Intro Heading"
+  },
+  {
+   "fieldname": "intro_paragraph_1",
+   "fieldtype": "Text Editor",
+   "label": "Intro Paragraph 1"
+  },
+  {
+   "fieldname": "intro_paragraph_2",
+   "fieldtype": "Text Editor",
+   "label": "Intro Paragraph 2"
+  },
+  {
+   "fieldname": "experience_section_section",
+   "fieldtype": "Section Break",
+   "label": "Experience Section"
+  },
+  {
+   "fieldname": "experience_heading",
+   "fieldtype": "Data",
+   "label": "Experience Heading"
+  },
+  {
+   "fieldname": "experience_description_1",
+   "fieldtype": "Text Editor",
+   "label": "Experience Description 1"
+  },
+  {
+   "fieldname": "experience_description_2",
+   "fieldtype": "Text Editor",
+   "label": "Experience Description 2"
+  },
+  {
+   "fieldname": "experience_image_top",
+   "fieldtype": "Attach Image",
+   "label": "Experience Image Top"
+  },
+  {
+   "fieldname": "experience_image_bottom",
+   "fieldtype": "Attach Image",
+   "label": "Experience Image Bottom"
+  },
+  {
+   "fieldname": "vision_section_section",
+   "fieldtype": "Section Break",
+   "label": "Vision Section"
+  },
+  {
+   "fieldname": "vision_heading",
+   "fieldtype": "Data",
+   "label": "Vision Heading"
+  },
+  {
+   "fieldname": "vision_description",
+   "fieldtype": "Text Editor",
+   "label": "Vision Description"
+  },
+  {
+   "default": "0",
+   "fieldname": "show_vision_section",
+   "fieldtype": "Check",
+   "label": "Show Vision Section"
+  },
+  {
+   "fieldname": "seo_section_section",
+   "fieldtype": "Section Break",
+   "label": "SEO Section"
+  },
+  {
+   "fieldname": "meta_title",
+   "fieldtype": "Data",
+   "label": "Meta Title"
+  },
+  {
+   "fieldname": "meta_description",
+   "fieldtype": "Small Text",
+   "label": "Meta Description"
+  },
+  {
+   "fieldname": "meta_image",
+   "fieldtype": "Attach Image",
+   "label": "Meta Image"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2026-06-07 11:25:06.236161",
+ "modified_by": "Administrator",
+ "module": "Deskgoo Ecommerce",
+ "name": "About Us Page",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}
