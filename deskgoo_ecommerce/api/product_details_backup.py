@@ -38,12 +38,7 @@ def get_items_with_price_and_stock(
         "brand",
         "warranty_period",
         "description",
-        "custom_discount",
-	"custom_cod_available",
-	"custom_best_seller",
-	"custom_catch_deals",
-	"custom_featured_product",
-	"custom_onsale_product"
+        "custom_discount"
     ]
 
     # No limit - fetch all items matching filters
@@ -112,11 +107,6 @@ def get_items_with_price_and_stock(
             "description": item_doc.description,
             "custom_discount": item_doc.custom_discount,
 	    "specifications": specifications,
-	     "custom_cod_available": item_doc.custom_cod_available,
-"custom_best_seller": item_doc.custom_best_seller,
-"custom_catch_deals": item_doc.custom_catch_deals,
-"custom_featured_product": item_doc.custom_featured_product,
-"custom_onsale_product": item_doc.custom_onsale_product,
 	    "attachments": attachments,
         })
 

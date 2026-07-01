@@ -23,7 +23,12 @@ def get_item_variants(item_code, price_list="Standard Selling", warehouse=None, 
         "brand",
         "warranty_period",
         "description",
-        "variant_of"
+        "variant_of",
+        "custom_cod_available",
+        "custom_best_seller",
+        "custom_catch_deals",
+        "custom_featured_product",
+        "custom_onsale_product",
     ]
 
     variants = frappe.get_all(
@@ -45,25 +50,40 @@ def get_item_variants(item_code, price_list="Standard Selling", warehouse=None, 
         return None
 
     result = []
+
     for item_doc in variants:
         if search:
             search_text = search.lower()
-            if (search_text not in (item_doc.item_name or "").lower()
-                    and search_text not in (item_doc.item_code or "").lower()):
+            if (
+                search_text not in (item_doc.item_name or "").lower()
+                and search_text not in (item_doc.item_code or "").lower()
+            ):
                 continue
 
-        price = frappe.db.get_value(
-            "Item Price",
-            {"item_code": item_doc.item_code, "price_list": price_list},
-            "price_list_rate"
-        ) or 0
+        price = (
+            frappe.db.get_value(
+                "Item Price",
+                {
+                    "item_code": item_doc.item_code,
+                    "price_list": price_list,
+                },
+                "price_list_rate",
+            )
+            or 0
+        )
 
         if warehouse:
-            stock = frappe.db.get_value(
-                "Bin",
-                {"item_code": item_doc.item_code, "warehouse": warehouse},
-                "actual_qty"
-            ) or 0
+            stock = (
+                frappe.db.get_value(
+                    "Bin",
+                    {
+                        "item_code": item_doc.item_code,
+                        "warehouse": warehouse,
+                    },
+                    "actual_qty",
+                )
+                or 0
+            )
         else:
             stock = get_latest_stock_qty(item_doc.item_code) or 0
 
@@ -73,6 +93,7 @@ def get_item_variants(item_code, price_list="Standard Selling", warehouse=None, 
             or safe_item_value(item_doc.item_code, "custom_item_specifications")
             or safe_item_value(item_doc.item_code, "custom_specifications")
         )
+
         if spec_html:
             soup = BeautifulSoup(spec_html, "html.parser")
             for p in soup.find_all("p"):
@@ -87,9 +108,14 @@ def get_item_variants(item_code, price_list="Standard Selling", warehouse=None, 
             "File",
             filters={
                 "attached_to_doctype": "Item",
-                "attached_to_name": item_doc.name
+                "attached_to_name": item_doc.name,
             },
-            fields=["name", "file_name", "file_url", "is_private"]
+            fields=[
+                "name",
+                "file_name",
+                "file_url",
+                "is_private",
+            ],
         )
 
         result.append({
@@ -104,6 +130,11 @@ def get_item_variants(item_code, price_list="Standard Selling", warehouse=None, 
             "warranty_period": item_doc.warranty_period,
             "description": item_doc.description,
             "custom_discount": safe_item_value(item_doc.item_code, "custom_discount"),
+            "custom_cod_available": item_doc.custom_cod_available or 0,
+            "custom_best_seller": item_doc.custom_best_seller or 0,
+            "custom_catch_deals": item_doc.custom_catch_deals or 0,
+            "custom_featured_product": item_doc.custom_featured_product or 0,
+            "custom_onsale_product": item_doc.custom_onsale_product or 0,
             "variant_of": item_doc.variant_of,
             "specifications": specifications,
             "attachments": attachments,
